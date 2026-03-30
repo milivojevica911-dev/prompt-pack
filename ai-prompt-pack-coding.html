@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 AI Prompts for People Learning to Code</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f4f6fb; color: #1a1a2e; }
+
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    color: white;
+    padding: 48px 32px 40px;
+    text-align: center;
+  }
+  header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
+  header p { font-size: 1rem; opacity: 0.75; max-width: 520px; margin: 0 auto; }
+  .badge { display: inline-block; background: #e94560; color: white; border-radius: 20px; padding: 4px 14px; font-size: 0.75rem; font-weight: 700; margin-bottom: 14px; letter-spacing: 1px; text-transform: uppercase; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+  .tab {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #555;
+  }
+  .tab:hover { border-color: #0f3460; color: #0f3460; }
+  .tab.active { background: #0f3460; border-color: #0f3460; color: white; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f3460;
+    margin-bottom: 6px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e94560;
+    display: inline-block;
+  }
+  .section-desc { font-size: 0.88rem; color: #666; margin-bottom: 20px; margin-top: 6px; }
+
+  .prompt-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 20px 16px;
+    margin-bottom: 14px;
+    border: 1px solid #e8ecf5;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    position: relative;
+  }
+  .prompt-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #e94560;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .prompt-title { font-weight: 700; font-size: 0.97rem; color: #1a1a2e; margin-bottom: 8px; }
+  .prompt-text {
+    font-size: 0.88rem;
+    color: #3d3d5c;
+    line-height: 1.65;
+    background: #f7f9ff;
+    border-left: 3px solid #0f3460;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .copy-btn {
+    margin-top: 10px;
+    background: none;
+    border: 1px solid #0f3460;
+    color: #0f3460;
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .copy-btn:hover { background: #0f3460; color: white; }
+  .copy-btn.copied { background: #10b981; border-color: #10b981; color: white; }
+
+  .tip-box {
+    background: linear-gradient(135deg, #fff7ed, #fff);
+    border: 1px solid #fbbf24;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+    font-size: 0.87rem;
+    color: #78350f;
+    line-height: 1.6;
+  }
+  .tip-box strong { color: #92400e; }
+
+  footer {
+    text-align: center;
+    padding: 28px;
+    font-size: 0.8rem;
+    color: #999;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">✦ Prompt Pack</div>
+  <h1>50 AI Prompts for People Learning to Code</h1>
+  <p>Learn faster, build real projects, and land your first job — using ChatGPT or any AI assistant.</p>
+</header>
+
+<div class="container">
+
+  <div class="tip-box">
+    <strong>💡 How to use this pack:</strong> Copy any prompt, paste it into ChatGPT, Claude, or any AI. Replace the <strong>[brackets]</strong> with your specific topic, language, or situation. These are templates — make them yours.
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('concepts')">🧠 Learn Concepts</div>
+    <div class="tab" onclick="switchTab('debug')">🐛 Write & Debug</div>
+    <div class="tab" onclick="switchTab('projects')">🛠 Build Projects</div>
+    <div class="tab" onclick="switchTab('jobs')">💼 Job Hunting</div>
+  </div>
+
+  <!-- LEARN CONCEPTS -->
+  <div class="section active" id="concepts">
+    <div class="section-title">🧠 Learn Concepts Faster</div>
+    <p class="section-desc">Use these to deeply understand topics — not just memorize them.</p>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 01</div>
+      <div class="prompt-title">Explain like I'm 10</div>
+      <div class="prompt-text">Explain [concept, e.g. recursion / APIs / pointers] like I'm a complete beginner. Use a real-world analogy first, then show a simple code example. After that, tell me the most common mistake beginners make with it.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 02</div>
+      <div class="prompt-title">Socratic learning mode</div>
+      <div class="prompt-text">I want to learn [topic] deeply. Don't just explain it — ask me questions one at a time to guide me to understand it myself. Start easy, get harder. Only give me the answer if I'm stuck after 2 tries.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 03</div>
+      <div class="prompt-title">Visual mental model</div>
+      <div class="prompt-text">Give me a visual mental model for [concept]. Draw it using ASCII art or describe a physical real-world scene I can picture in my head. The goal is that I can close my eyes and "see" how this works.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 04</div>
+      <div class="prompt-title">The "why does this exist" prompt</div>
+      <div class="prompt-text">Before [concept/tool/feature] existed, what problem did developers face? Why was this solution invented? What would code look like without it? This helps me understand the motivation, not just the mechanics.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 05</div>
+      <div class="prompt-title">Compare two things</div>
+      <div class="prompt-text">Compare [concept A] vs [concept B] in a simple table. Show: what each is, when to use each, a 3-line code example of each, and the #1 mistake beginners make when choosing between them.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 06</div>
+      <div class="prompt-title">Test my understanding</div>
+      <div class="prompt-text">I just learned about [topic]. Give me 5 short quiz questions — mix of multiple choice and "what does this code output" style. Then give me the answers with explanations. Be honest if I get something wrong.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 07</div>
+      <div class="prompt-title">The "what I need to know first" prompt</div>
+      <div class="prompt-text">I want to learn [topic, e.g. React / machine learning / databases]. What are the 5 prerequisite concepts I must understand first? For each one, give me one resource and estimate how long it takes to learn it.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 08</div>
+      <div class="prompt-title">30-day learning plan</div>
+      <div class="prompt-text">Create a 30-day study plan to go from zero to building a basic [project type, e.g. web app / REST API / CLI tool] in [language/framework]. I have [X hours per day]. Be specific: what to study each week and what mini-project to build at the end of each week.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 09</div>
+      <div class="prompt-title">Feynman technique</div>
+      <div class="prompt-text">I'm going to explain [concept] to you in my own words. Tell me what I got right, what I got wrong, what I missed, and what the most important thing I should add is. Here's my explanation: [paste your explanation]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 10</div>
+      <div class="prompt-title">Roadmap for a specific role</div>
+      <div class="prompt-text">I want to become a [frontend / backend / full-stack / data / mobile] developer. Give me a realistic skill roadmap — not overwhelming, just the 10 most important things to learn in order, with a rough time estimate for each one.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+  </div>
+
+  <!-- WRITE & DEBUG -->
+  <div class="section" id="debug">
+    <div class="section-title">🐛 Write & Debug Code</div>
+    <p class="section-desc">Don't just get answers — learn WHY the code works.</p>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 11</div>
+      <div class="prompt-title">Explain this code line by line</div>
+      <div class="prompt-text">Explain this code to me line by line like I'm a beginner. For each line, tell me what it does AND why it's there. If any part could be written differently, show me the alternative.
+
+[paste your code here]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 12</div>
+      <div class="prompt-title">Debug with explanation</div>
+      <div class="prompt-text">My code has a bug. Don't just fix it — explain what the bug is, why it happened, and what I should have written instead. Also tell me how I could have caught this bug myself.
+
+[paste your buggy code and describe the problem]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 13</div>
+      <div class="prompt-title">Write code, teach as you go</div>
+      <div class="prompt-text">Write [specific function/script] in [language]. As you write it, add a comment above every 2-3 lines explaining what that block does and why you chose to do it that way. I want to be able to reproduce this myself next time.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 14</div>
+      <div class="prompt-title">Code review like a senior dev</div>
+      <div class="prompt-text">Review my code like a senior developer. Look for: bugs, bad practices, readability issues, performance problems, and security issues. Be direct. Rank the issues from most to least important and rewrite the problematic parts.
+
+[paste code]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 15</div>
+      <div class="prompt-title">Simplify my code</div>
+      <div class="prompt-text">My code works but feels messy. Rewrite it to be cleaner and more readable without changing what it does. Then explain the 3 main changes you made and why they're better.
+
+[paste code]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 16</div>
+      <div class="prompt-title">Trace through the code</div>
+      <div class="prompt-text">Walk me through what happens when I call [function/run this code] with the input [specific input]. Trace each step of execution like a debugger — show the value of each variable at each step.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 17</div>
+      <div class="prompt-title">Error message decoder</div>
+      <div class="prompt-text">I got this error message. Explain exactly what it means in plain English, what most commonly causes it, and give me the 3 most likely fixes. Also tell me what I should google if none of those work.
+
+Error: [paste error]
+My code: [paste relevant code]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 18</div>
+      <div class="prompt-title">Build a function from scratch</div>
+      <div class="prompt-text">Help me write a [description of function] from scratch. Don't give me the finished code right away — walk me through the logic first, ask me what I think the steps should be, then help me code each step one at a time.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 19</div>
+      <div class="prompt-title">Write unit tests and explain them</div>
+      <div class="prompt-text">Write unit tests for this function. Include edge cases I might have missed. After writing the tests, explain what each test is checking and why that case matters.
+
+[paste function]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 20</div>
+      <div class="prompt-title">Convert between languages</div>
+      <div class="prompt-text">Convert this [Python / JavaScript / Java] code to [target language]. After converting, highlight the 3 biggest differences in how the two languages handle this kind of code, so I understand the translation — not just the result.
+
+[paste code]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+  </div>
+
+  <!-- BUILD PROJECTS -->
+  <div class="section" id="projects">
+    <div class="section-title">🛠 Build Real Projects with AI</div>
+    <p class="section-desc">Use AI as a co-founder, not just a search engine.</p>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 21</div>
+      <div class="prompt-title">Break down any project</div>
+      <div class="prompt-text">I want to build [project idea]. I'm a beginner in [language/framework]. Break this down into small, specific tasks I can do one at a time. Start from zero. Make each task completable in under 2 hours. List dependencies between tasks.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 22</div>
+      <div class="prompt-title">MVP first, features later</div>
+      <div class="prompt-text">What's the absolute minimum version of [project] I need to build first to prove the concept works? List only the features that are truly essential for the MVP. Then list 5 features I can add after. Help me resist over-engineering.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 23</div>
+      <div class="prompt-title">Tech stack recommendation</div>
+      <div class="prompt-text">I want to build [project description]. I'm a beginner. Recommend the best tech stack for this — not the most advanced one, but the one that's easiest to learn and gets the job done. Explain why you chose each part.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 24</div>
+      <div class="prompt-title">Stuck on a feature — unstick me</div>
+      <div class="prompt-text">I'm building [project] and I'm stuck trying to implement [feature]. Here's what I've tried: [explain attempts]. Don't give me the full solution — give me the next small step I should try, and explain the concept behind it.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 25</div>
+      <div class="prompt-title">Design the database schema</div>
+      <div class="prompt-text">Help me design the database for [project]. I need to store [describe the data]. Show me the tables, columns, and relationships. Explain why you structured it that way and what problems this design avoids.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 26</div>
+      <div class="prompt-title">Plan the file structure</div>
+      <div class="prompt-text">I'm building a [type of app] in [framework]. Show me a clean file/folder structure for this project. Explain what goes in each folder and why. Show me what a professional would do, not just what works.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 27</div>
+      <div class="prompt-title">Build an API endpoint</div>
+      <div class="prompt-text">Help me build a [GET/POST/PUT/DELETE] API endpoint for [purpose] in [framework]. Show me the full code, explain every line, and show me how to test it. Also tell me what could go wrong and how to handle those errors.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 28</div>
+      <div class="prompt-title">Add authentication</div>
+      <div class="prompt-text">I need to add user login/signup to my [language/framework] project. What's the simplest and most secure way to do this as a beginner? Walk me through it step by step. What should I absolutely NOT do as a beginner with auth?</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 29</div>
+      <div class="prompt-title">Deploy your project</div>
+      <div class="prompt-text">I finished building [project type] in [language/framework]. Walk me through how to deploy it for free so others can use it. Give me step-by-step instructions and tell me which free platform is best for a beginner project like mine.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 30</div>
+      <div class="prompt-title">Make your project portfolio-ready</div>
+      <div class="prompt-text">I built [project description]. How do I make it look good for a portfolio? What features should I add to impress a recruiter? What should my README.md say? Give me a template README I can customize.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+  </div>
+
+  <!-- JOB HUNTING -->
+  <div class="section" id="jobs">
+    <div class="section-title">💼 Land Your First Job</div>
+    <p class="section-desc">Use AI to prepare smarter, not harder.</p>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 31</div>
+      <div class="prompt-title">Mock interview — easy level</div>
+      <div class="prompt-text">Do a mock coding interview with me for a junior [language] developer role. Start with easy questions. Ask me one at a time, wait for my answer, then give honest feedback on my solution — correctness, efficiency, and how I'd communicate it in a real interview.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 32</div>
+      <div class="prompt-title">Explain a concept like in an interview</div>
+      <div class="prompt-text">Ask me to explain [concept] as if I'm in a job interview. After I answer, tell me: what I got right, what I missed, what a strong answer would include, and give me a model answer I can learn from.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 33</div>
+      <div class="prompt-title">Tell me about yourself — practice</div>
+      <div class="prompt-text">Help me write a strong "tell me about yourself" answer for a junior developer interview. I have [X months/years of self-study], I know [languages/skills], and I built [projects]. Make it confident, honest, and under 90 seconds when spoken.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 34</div>
+      <div class="prompt-title">Optimize my CV/resume</div>
+      <div class="prompt-text">Review my CV for a junior developer role. Tell me what's weak, what's missing, and what a recruiter notices in the first 10 seconds. Then rewrite my experience section to sound more technical and impactful.
+
+[paste your CV]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 35</div>
+      <div class="prompt-title">Cover letter that doesn't suck</div>
+      <div class="prompt-text">Write a short, authentic cover letter for a junior developer position at [company/type of company]. I have [background]. Make it sound human — not like a template. Focus on what I can do for them, not what I want.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 36</div>
+      <div class="prompt-title">Crack the system design basics</div>
+      <div class="prompt-text">Explain [system design concept, e.g. load balancing / caching / microservices] at a junior developer level. I don't need to design Netflix — I need to understand it well enough to answer basic questions in an entry-level interview.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 37</div>
+      <div class="prompt-title">Top 20 interview questions for my stack</div>
+      <div class="prompt-text">Give me the 20 most commonly asked interview questions for a junior [stack, e.g. React / Node / Python / Java] developer role. For each question, give me the key points a strong answer should include — not a full answer, just the skeleton.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 38</div>
+      <div class="prompt-title">LeetCode problem walkthrough</div>
+      <div class="prompt-text">I'm working on this LeetCode problem: [problem name or description]. Don't give me the solution. Instead, ask me questions to guide my thinking: what data structure could work here? What's the brute force? Can we do better? Push me to figure it out.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 39</div>
+      <div class="prompt-title">Negotiate your first salary</div>
+      <div class="prompt-text">I just got a job offer as a junior developer in [city/country] for [salary offered]. Is this fair? What's the realistic range for this role? Give me a script I can use to negotiate for more without seeming ungrateful or aggressive.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 40</div>
+      <div class="prompt-title">LinkedIn summary that gets noticed</div>
+      <div class="prompt-text">Write a LinkedIn "About" section for a self-taught junior developer looking for their first job. I know [skills], built [projects], and I'm looking for [type of role]. Make it punchy, honest, and something a recruiter would actually read.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 41</div>
+      <div class="prompt-title">Cold email to a company</div>
+      <div class="prompt-text">Write a cold email I can send to [type of company] asking about junior developer openings. I have [background]. Make it short (under 100 words), confident, and end with a clear ask. No cringe, no begging.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 42</div>
+      <div class="prompt-title">Explain a gap in experience</div>
+      <div class="prompt-text">I'm a self-taught developer with no degree and no professional experience. Help me write an answer to the question "why should we hire you over someone with a CS degree?" that's honest but confident and focuses on what makes me valuable.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 43</div>
+      <div class="prompt-title">GitHub profile readme</div>
+      <div class="prompt-text">Write a GitHub profile README.md for a junior developer. I know [skills], I've built [projects], and I'm open to [type of work]. Make it look clean and professional — include sections for skills, projects, and how to contact me.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 44</div>
+      <div class="prompt-title">Behavioral question prep (STAR method)</div>
+      <div class="prompt-text">Help me answer this behavioral interview question using the STAR method: "[question, e.g. Tell me about a time you faced a technical challenge]". I'll give you the raw story and you help me structure it well. My story: [describe what happened]</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 45</div>
+      <div class="prompt-title">What to study this week for interviews</div>
+      <div class="prompt-text">I have a technical interview in [X weeks] for a junior [type] developer role. Based on what companies typically test, give me a prioritized study plan for the time I have. I'm comfortable with [topics] but weak on [topics].</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 46</div>
+      <div class="prompt-title">Questions to ask the interviewer</div>
+      <div class="prompt-text">Give me 7 smart questions to ask at the end of a junior developer interview. Mix of questions about the team, the tech stack, growth opportunities, and day-to-day work. Questions that show I'm serious — not just "what does your company do".</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 47</div>
+      <div class="prompt-title">Take-home project tips</div>
+      <div class="prompt-text">I got a take-home coding assignment: [describe the task]. Before I start coding, what are the 5 most important things I should focus on to impress the reviewers? What do most candidates mess up? What would make mine stand out?</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 48</div>
+      <div class="prompt-title">Freelance rate calculator</div>
+      <div class="prompt-text">I'm a junior developer in [country] looking to do freelance work. Help me figure out what hourly rate to charge. Consider local cost of living, international market rates, and my skill level. Give me a range for local clients and international clients separately.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 49</div>
+      <div class="prompt-title">Network on LinkedIn without being cringe</div>
+      <div class="prompt-text">Write a short LinkedIn connection request message I can send to [senior developers / recruiters / people who work at companies I want to join]. I want to build a genuine connection, not spam them. Make it personal-feeling, under 3 sentences.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-num">Prompt 50</div>
+      <div class="prompt-title">Stay motivated — accountability plan</div>
+      <div class="prompt-text">I'm learning to code and often lose motivation after a few weeks. Create a realistic weekly schedule for me based on [hours per day available] that balances learning, building, and rest. Include milestones I can celebrate to stay motivated long-term.</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  50 AI Prompts for People Learning to Code &nbsp;·&nbsp; Replace [brackets] with your own details &nbsp;·&nbsp; Works with ChatGPT, Claude, Gemini, and any AI assistant
+</footer>
+
+<script>
+  function switchTab(id) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  function copyPrompt(btn) {
+    const text = btn.previousElementSibling.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
